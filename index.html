@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高昱明网站</title>
+    <style>
+      .intro {
+        display: table;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        background-size: 100%;
+        position: relative;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        background: url(./首页图片/首页图片2-3.jpg) no-repeat center scroll;
+        background-color: #000;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+      }
+      @media (min-width: 768px) {
+        .intro {
+          height: 100%;
+          padding: 0;
+        }
+      }
+
+      .intro .intro-body {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+      }
+      @media (min-width: 768px) {
+        .container {
+          width: 80%;
+        }
+      }
+
+      .row {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .title {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+      
+      
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 35px;
+        font-family: sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #000;
+      }
+
+      .h1,
+      h1 {
+        font-size: 102px;
+      }
+
+      .h2,
+      h2 {
+        font-size: 55px;
+      }
+      .h3,
+      h3 {
+        font-size: 35px;
+      }
+      .h4,
+      h4 {
+        font-size: 25px;
+      }
+      .h5,
+      h5 {
+        font-size: 20px;
+      }
+      .b,b{
+        font-weight: 400;
+      }
+      p {
+        margin: 0 0 25px;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #000;
+        font-weight: 400;
+      }
+
+       @media screen and (max-width: 767px) and (orientation: portrait) {
+        h1 {
+          font-size: 50px;
+        }
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h2 {
+          font-size: 40px;
+        }
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h3 {
+          font-size: 20px;
+        }
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h5 {
+          font-size: 18px;
+        }
+      }
+      @media (min-width: 768px) {
+        p {
+          margin: 0 0 35px;
+          font-size: 18px;
+          line-height: 1.6;
+        }
+      }
+
+      .portfolio-section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        width: 100%;
+        color: #fff;
+        background: no-repeat center center scroll;
+        background-color: #f7f7f7;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        box-sizing: border-box;
+      }
+      .content-section {
+        padding-top: 0px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .format {
+        width: 100%;
+        font-size: 0;
+        padding-top: 3.3vw;
+        padding-bottom: 3.3vw;
+        min-height: 33vh;
+        max-width: 1800px;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        grid-auto-rows: min-content;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 767px) {
+        .format {
+          padding-left: 6vw;
+          padding-right: 6vw;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+      }
+      .item {
+        padding-bottom: 75%;
+        position: relative;
+        height: 0;
+      }
+
+      a {
+        background-color: transparent;
+        box-sizing: border-box;
+      }
+      .image {
+        padding-bottom: 75%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        line-height: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+        background: 0 0;
+      }
+
+      .wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      #grid img {
+        display: block;
+        object-position: 50% 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .overlay {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity ease 200ms;
+        z-index: 99;
+        background-color: #efeeee;
+      }
+      .item:hover .overlay {
+        opacity: 0.8;
+      }
+
+      .text {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 7%;
+        text-align: center;
+        z-index: 100;
+        transition: opacity ease 200ms;
+      }
+
+      .item:hover .text {
+        opacity: 1;
+      }
+      .jieshao {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 0;
+        color: #000;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      color: #fff;
+      background-color: #fff;
+      overflow-x: hidden;
+    "
+  >
+    <!--封面区-->
+    <header class="intro">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row" style="padding-bottom: 50px;padding-top: 120px;">
+            <div class="title">
+              <h1 style="
+                font-weight: 500;
+                letter-spacing: 40px;
+                color: #ffe4c0;
+                margin-bottom: 0px;
+                margin-top: 270PX;
+              ">高昱明</h1>
+              <h2 style="font-weight: 50; letter-spacing: 0.3vh; color: #ffe4c0; padding-right: 35px;">
+             YUMING <b>GAO</b>
+            </h2>
+              <h3 style="font-weight: 200; letter-spacing: 0.2vh;color: #ffe4c0; margin-top:300px; line-height: 1.5;">
+                UX/UI设计师, 服务设计师, 用户研究员<br />UX/UI designer, Service designer, User researcher
+              </h3>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--作品区-->
+    <div class="content-section text-center" data-offset="100px">
+      <div class="portfolio-section">
+        <div class="container">
+          <div class="title" style="padding: 0px">
+            <h2>PORTFOLIO</h2>
+            <div id="grid" class="format">
+              <!--第一个项目-->
+              <a
+                class="item"
+                target="_blank"
+                href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E4%B8%80%EF%BC%88%E9%AB%98%E6%B5%81%E9%87%8F%EF%BC%89/%E4%BD%9C%E5%93%81%E4%B8%80%EF%BC%88%E9%AB%98%E6%B5%81%E9%87%8F%EF%BC%89.html"
+              >
+                <div class="image">
+                  <div class="wrapper">
+                    <img src="../作品一（高流量）/效果图/高流量网站图/1.jpg" />
+                    <div class="overlay"></div>
+                    <div class="text">
+                      <h3 class="jieshao">UX/UI | 医用高流量</h3>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!--第二个项目-->
+              <a
+                class="item"
+                target="_blank"
+                href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E4%BA%8C%EF%BC%88%E8%BF%9C%E7%A8%8B%E5%8C%BB%E7%96%97%EF%BC%89/%E4%BD%9C%E5%93%81%E4%BA%8C%EF%BC%88%E8%BF%9C%E7%A8%8B%E5%8C%BB%E7%96%97%EF%BC%89.html"
+              >
+                <div class="image">
+                  <div class="wrapper">
+                    <img src="../作品二（远程医疗）/效果图/11111.png" />
+                    <div class="overlay"></div>
+                    <div class="text">
+                      <h3 class="jieshao">UX/UI | 远程医疗</h3>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!--第三个项目-->
+              <a
+                class="item"
+                target="_blank"
+                href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E4%B8%89%EF%BC%88%E5%BF%97%E6%84%BF%E8%80%85%E7%BD%91%E7%AB%99%EF%BC%89/%E4%BD%9C%E5%93%81%E4%B8%89%EF%BC%88%E5%BF%97%E6%84%BF%E8%80%85%EF%BC%89.html"
+              >
+                <div class="image">
+                  <div class="wrapper">
+                    <img src="../作品三（志愿者网站）/效果图3/网站图/1.jpg" />
+                    <div class="overlay"></div>
+                    <div class="text">
+                      <h3 class="jieshao">UX/UI | 志愿服务系统</h3>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!--第四个项目-->
+              <a
+                class="item"
+                target="_blank"
+                href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E5%9B%9B%EF%BC%88%E6%B8%B8%E6%88%8F%EF%BC%89/%E4%BD%9C%E5%93%81%E5%9B%9B%EF%BC%88%E6%B8%B8%E6%88%8F%EF%BC%89.html"
+              >
+                <div class="image">
+                  <div class="wrapper">
+                    <img src="../作品四（游戏）/效果图4/网站图4/1.jpg" />
+                    <div class="overlay"></div>
+                    <div class="text">
+                      <h3 class="jieshao">UX/UI | 均衡膳食</h3>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <!--第五个项目-->
+              <a
+                class="item"
+                target="_blank"
+                href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E4%BA%94%EF%BC%88%E5%B2%97%E4%BA%AD%EF%BC%89/%E4%BD%9C%E5%93%81%E4%BA%94%EF%BC%88%E5%B2%97%E4%BA%AD%EF%BC%89.html"
+              >
+                <div class="image">
+                  <div class="wrapper">
+                    <img src="../作品五（岗亭）/效果图5/网站图5/1.jpg" />
+                    <div class="overlay"></div>
+                    <div class="text">
+                      <h3 class="jieshao">ID/UI | 岗亭设计</h3>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+
+              <!--第六个项目-->
+              <a
+                class="item"
+                target="_blank"
+                href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E5%85%AD%EF%BC%88%E7%BB%86%E8%83%9E%EF%BC%89/%E4%BD%9C%E5%93%81%E5%85%AD%EF%BC%88%E7%BB%86%E8%83%9E%EF%BC%89.html"
+              >
+                <div class="image">
+                  <div class="wrapper">
+                    <img src="../作品六（细胞）/效果图6/1.jpg" />
+                    <div class="overlay"></div>
+                    <div class="text">
+                      <h3 class="jieshao">衍纸海报设计</h3>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Contact区域-->
+    <section id="contact" class="content-section text-left">
+      <div
+        class="portfolio-section"
+        style="
+          background-color: #ffffff;
+          padding-top: 150px;
+          padding-bottom: 150px;
+          padding-left: 210px;
+          
+        "
+      >
+        <div class="container">
+          <div class="title">
+            <h3 style="margin-bottom: 20px">联系我吧 | CONTACT</h3>
+            <p style="margin-bottom: 10px"><b>微信:</b> 18206205185</p>
+            <p style="margin-bottom: 10px"><b>邮箱: </b>2446070851@qq.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
