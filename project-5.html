@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作品五</title>
+    <style>
+      .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        box-sizing: border-box;
+      }
+      @media (min-width: 768px) {
+        .container {
+          width: 80%;
+        }
+      }
+
+      .row {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      .title {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0 0 35px;
+
+        font-family: sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #000;
+      }
+
+      .h1,
+      h1 {
+        font-size: 90px;
+      }
+
+      .h2,
+      h2 {
+        font-size: 60px;
+      }
+      .h3,
+      h3 {
+        font-size: 35px;
+      }
+      .h4,
+      h4 {
+        font-size: 25px;
+      }
+      .h5,
+      h5 {
+        font-size: 20px;
+      }
+      .b,
+      b {
+        font-weight: 500;
+      }
+      .p,
+      p {
+        margin: 0 0 20px;
+        font-size: 16px;
+        line-height: 1.7;
+        font-weight: 300;
+        letter-spacing: 0.6px;
+        color: #545454;
+      }
+
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h1 {
+          font-size: 50px;
+        }
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h2 {
+          font-size: 40px;
+        }
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h3 {
+          font-size: 20px;
+        }
+      }
+      @media screen and (max-width: 767px) and (orientation: portrait) {
+        h5 {
+          font-size: 18px;
+        }
+      }
+      @media (min-width: 768px) {
+        p {
+          margin: 0 0 15px;
+          font-size: 18px;
+          line-height: 1.7;
+        }
+      }
+
+      .portfolio-section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        width: 100%;
+        color: #fff;
+        background: no-repeat center center scroll;
+        background-color: #f2f2f2;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        box-sizing: border-box;
+      }
+      .content-section {
+        padding-top: 0px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .format {
+        width: 100%;
+        font-size: 0;
+        padding-top: 3.3vw;
+        padding-bottom: 3.3vw;
+        min-height: 33vh;
+        max-width: 1800px;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        grid-auto-rows: min-content;
+        box-sizing: border-box;
+      }
+      @media screen and (max-width: 767px) {
+        .format {
+          padding-left: 6vw;
+          padding-right: 6vw;
+          grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+      }
+      .item {
+        padding-bottom: 75%;
+        position: relative;
+        height: 0;
+      }
+
+      a {
+        background-color: transparent;
+        box-sizing: border-box;
+      }
+      .image {
+        padding-bottom: 75%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        line-height: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+        background: 0 0;
+      }
+
+      .wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      #grid img {
+        display: block;
+        object-position: 50% 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .overlay {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity ease 200ms;
+        z-index: 99;
+        background-color: #efeeee;
+      }
+      .item:hover .overlay {
+        opacity: 0.8;
+      }
+
+      .text {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 7%;
+        text-align: center;
+        z-index: 100;
+        transition: opacity ease 200ms;
+      }
+
+      .item:hover .text {
+        opacity: 1;
+      }
+      .jieshao {
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 0;
+        color: #000;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .section-border {
+        background-color: #f7f7f7;
+      }
+      .content-wrapper {
+        width: 60%;
+        padding-top: 6.6vmax;
+        padding-bottom: 6.6vmax;
+        padding-right: 4vw;
+        padding-left: 4vw;
+        margin: 0 auto;
+        box-sizing: content-box;
+        justify-content: center;
+        display: flex;
+      }
+      @media screen and (max-width: 767px) {
+        .content-wrapper {
+          width: 100%;
+          padding-right: 6vw;
+          padding-left: 6vw;
+          box-sizing: border-box;
+        }
+      }
+
+      .content {
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+      @media screen and (max-width: 767px) {
+        .content {
+          width: 100% !important;
+          padding-right: 6vw;
+          padding-left: 6vw;
+          box-sizing: border-box;
+        }
+      }
+      .sqs-row {
+        position: relative;
+        width: auto !important;
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+      .menu-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: Center;
+      }
+      .menu-item {
+        text-align: center;
+        height: auto;
+        margin-bottom: 5rem;
+        padding: 5rem;
+        min-width: 300px;
+      }
+      .menu-item a {
+        text-decoration: underline;
+      }
+      .page-section {
+        align-items: center;
+        min-height: 66vh;
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+      }
+      .section-background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        pointer-events: none;
+        background-color: #000;
+      }
+
+      .section-background-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .section-background img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .content-wrp {
+        padding-top: 8vmax;
+        padding-bottom: 4vmax;
+        padding-right: 8.5vw;
+        padding-left: 8.5vw;
+        margin: 0 auto;
+        box-sizing: content-box;
+        justify-content: left;
+        display: flex;
+        width: 100%;
+        box-sizing: content-box;
+        position: relative;
+      }
+      @media screen and (max-width: 767px) {
+        .content-wrp {
+          padding-right: 6vw;
+          padding-left: 6vw;
+          box-sizing: border-box;
+        }
+      }
+      .content2 {
+        width: 50%;
+      }
+      .section-bb {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+      .sqs-block {
+        padding-left: 17px;
+        padding-right: 17px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        position: relative;
+        height: auto;
+      }
+      .feature-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .feature {
+        width: 27%;
+        height: auto;
+        margin-bottom: 1rem;
+        padding: 1.6rem;
+        border-radius: 10px;
+        min-width: 200px;
+        color: #000;
+      }
+      .feature.process-step {
+        width: 20%;
+      }
+      .feature ul {
+        list-style-position: outside;
+        padding-left: 1.2rem;
+        line-height: 29px;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      color: #fff;
+      background-color: #fff;
+      overflow-x: hidden;
+    "
+  >
+    <!--封面区-->
+    <section class="page-section">
+      <div class="section-bb">
+        <div class="section-background">
+          <img
+            src="../作品五（岗亭）/效果图5/网站图5/2.jpg"
+            style="display: block; object-position: 55% 42%"
+          />
+          <div class="section-background-overlay" style="opacity: 0.15"></div>
+        </div>
+      </div>
+      <div class="content-wrp">
+        <div class="content2" style="width: 100%">
+          <div class="sqs-row" style="text-align: left">
+            <h1
+              style="
+                font-weight: 700;
+                letter-spacing: 1px;
+                color: #ffffff;
+                margin-bottom: 5px;
+              "
+            >
+              空气净化岗亭
+            </h1>
+            <h2 style="font-weight: 150; letter-spacing: 0.8vh; color: #ffffff">
+              Airlet
+            </h2>
+            <h3
+              style="
+                font-weight: 200;
+                color: #ffffff;
+                margin-top: 100px;
+                line-height: 1.7;
+              "
+            >
+              使警卫在雾霾天执勤时也能获得净化空气<br />Enable the entrance
+              guard to get purified air on the smoggy day
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--项目简介区-->
+    <section id="about" class="content-section text-left">
+      <div class="content-wrapper">
+        <div class="content">
+          <div class="sqs-row">
+            <h3 style="margin-bottom: 30px; color: #1c3574">痛点/Problem</h3>
+            <p style="color: #000">
+              面对日益严重的雾霾，我们认为每个人都应该有机会在雾霾天保护自己。
+              警卫长时间在室外工作且着装要求不允许带口罩，
+              如何才能在不损害警卫职业形象、不违反着装规定的情况下，保护其免受工作场所雾霾的侵扰，同时协助他们开展工作呢？
+            </p>
+            <p style="color: #000">
+              Facing the increasingly serious smog, we believe that everyone
+              should have the opportunity to protect themselves from smog.
+              Entrance guards are required to work outdoors for a long time due
+              to their job attributes. How might we protect the entrance guard
+              from the smog in their working places, without blemishing the
+              professional image and following the dress code, at the same time
+              assist their work?
+            </p>
+
+            <h3 style="padding-top: 100px; margin-bottom: 30px; color: #1c3574">
+              解决方案/Solution
+            </h3>
+            <p style="color: #000">
+              AIRLET
+              是一款专为警卫设计的岗亭，旨在净化雾霾天的空气，同时设计了可供警卫和访客操作的交互大屏，极大提升其工作效率。
+            </p>
+            <p style="color: #000">
+              AIRLET is a booth designed specifically for entrance guards. It
+              aims to purify the air on smoggy days. It also has a large
+              interactive screen that can be operated by entrance guards and
+              visitors, greatly improving the work efficiency.
+            </p>
+
+            <h3 style="padding-top: 100px; margin-bottom: 30px; color: #1c3574">
+              项目时间/Duration
+            </h3>
+            <p style="color: #000">2018.10 ~ 2018.12</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--设计展示区-->
+    <section id="work" class="content-section text-left" data-offset="100px">
+      <div class="section-border" style="background-color: #f7f7f7">
+        <div class="content-wrapper">
+          <div class="content">
+            <div class="sqs-row">
+              
+
+              <h4
+                style="color: #1c3574; margin-bottom: 25px;"
+              >
+                <b>前期调研/The Research</b>
+              </h4>
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                桌面调研：雾霾危害和现有的解决方案
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/3.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                确认目标用户：警卫长时间在室外且因着装要求不可以带口罩
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/4.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                用户旅程图：“警卫的一天”
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/5.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                
+                设计方案和草模测试
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/6.jpg"
+                width="100%"
+                style="padding-bottom: 10px"
+              />
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/7.jpg"
+                width="100%"
+                style="padding-bottom: 10px"
+              />
+
+              <h4
+                style="color: #1c3574; margin-bottom: 25px; padding-top: 70px"
+              >
+                <b>设计方案/The Design</b>
+              </h4>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/8.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                产品使用流程图
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/9.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+               产品细节：重力感应开启空气净化
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/10.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                User flow：屏幕交互流程
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/11.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+              
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                访客页面
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/12.jpg"
+                width="100%"
+                style="padding-bottom: 10px"
+              />
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/13.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                警卫页面
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/14.jpg"
+                width="100%"
+                style="padding-bottom: 10px"
+              />
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/15.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                主要页面
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/16.jpg"
+                width="100%"
+                style="padding-bottom: 60px"
+              />
+
+              <p class="p1" style="margin-bottom: 10px; color: #545454">
+                净化技术应用
+              </p>
+              <img
+                src="../作品五（岗亭）/效果图5/网站图5/17.jpg"
+                width="100%"
+                style="padding-bottom: 10px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--结尾区-->
+    <section class="content-section text-left" data-offset="100px">
+      <div class="section-border" style="background-color: #ffffff">
+        <div class="content-wrapper" style="padding-bottom: 0">
+          <div class="content">
+            <div class="sqs-row">
+              <h3 style="color: #1c3574">其他作品/OTHER WORK</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--1号链接-->
+      <div class="menu-list">
+        <div class="menu-item">
+          <h5>
+            <a
+              target="_blank"
+              href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E4%B8%80%EF%BC%88%E9%AB%98%E6%B5%81%E9%87%8F%EF%BC%89/%E4%BD%9C%E5%93%81%E4%B8%80%EF%BC%88%E9%AB%98%E6%B5%81%E9%87%8F%EF%BC%89.html"
+            >
+              UI/UX | 院用高流量
+            </a>
+          </h5>
+        </div>
+
+        <!--2号链接-->
+        <div class="menu-item">
+          <h5>
+            <a
+              target="_blank"
+              href="file:///Users/gaoyuming/Desktop/%E7%BC%96%E7%A8%8B/%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99/%E4%BD%9C%E5%93%81%E4%B8%80/%E4%BD%9C%E5%93%81%E4%B8%80.html"
+            >
+              衍纸海报设计
+            </a>
+          </h5>
+        </div>
+
+        
+      </div>
+    </section>
+  </body>
+</html>
